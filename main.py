@@ -37,7 +37,7 @@ class OperaGX:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0"
         }
         try:
-            r = self.session.get("https://api.gx.me/profile/token", headers=headers, proxy="http://boymakiro_gmail_com:razvansef@la.residential.rayobyte.com:8000")
+            r = self.session.get("https://api.gx.me/profile/token", headers=headers, proxy="urporxy")
             self.auth = r.json()['data']
         except:
             i = OperaGX()
