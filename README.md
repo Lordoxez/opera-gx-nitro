@@ -11,8 +11,8 @@ This tool is strictly used to generate Discord Nitro's using OperaGX API!
 2. Open `main.py` (u need a lot of braincells for this)
 
 ## ⚠️ DISCLAIMER
-This GitHub repository is strictly for EDUCATIONAL PURPOSES. Any use of its contents is at your own risk. I am not liable for any issues that may arise. Remember to avoid plagiarism by properly citing sources.
- 
+This GitHub repository is strictly for EDUCATIONAL PURPOSES. Any use of its contents is at your own risk. I am not liable for any issues that may arise. 
+
 ## 🎭 Issues
 
 - If you have any errors report em' in: [issues](https://github.com/Lordoxez/opera-gx-nitro/issues/new)
