@@ -60,7 +60,7 @@ class OperaGX:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0"
         }
         try:
-            nitro = self.session.post("https://discord.opr.gg/v2/direct-fulfillment", headers=headers, proxy="http://boymakiro_gmail_com:razvansef@la.residential.rayobyte.com:8000")
+            nitro = self.session.post("https://discord.opr.gg/v2/direct-fulfillment", headers=headers, )
             nitroGift = nitro.json()['token']
             nitro = f"https://discord.com/billing/partner-promotions/1180231712274387115/{nitroGift}"
 
