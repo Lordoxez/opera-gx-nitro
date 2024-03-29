@@ -119,7 +119,7 @@ def get():
 threads = []
 
 while True:
-    for i in range(int(5)):
+    for i in range(int(num_threads)):
         thread = threading.Thread(target=get, name=f"LordTheBest")
         threads.append(thread)
         thread.start()
