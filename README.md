@@ -1,7 +1,7 @@
 # Discord Nitro Generator ⚽
 This tool is strictly used to generate Discord Nitro's using OperaGX API!
 
-## 🎊 Exciting Update:
+## 🎊 Exciting Updates
 Once this repository reaches 50 stars, I'll be adding an auto session generator and proxy support! Share and star the repository to help reach this goal!
 
 ## 🔍 Features
