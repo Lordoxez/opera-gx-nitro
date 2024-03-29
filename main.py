@@ -1,9 +1,18 @@
-import tls_client
-from colorama import Fore, init, Back
-from pystyle import Write, Colors
 from datetime import datetime
 import threading
 from time import sleep
+import json
+import os
+try:
+    import tls_client
+    from colorama import Fore, init, Back
+    from pystyle import Write, Colors
+    import sys
+except:
+    os.system("pip install tls_client")
+    os.system("pip install colorama")
+    os.system("pip install pystyle")
+    os.system("pip install sys")
 
 print_lock = threading.Lock()
 
@@ -37,7 +46,7 @@ class OperaGX:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0"
         }
         try:
-            r = self.session.get("https://api.gx.me/profile/token", headers=headers, proxy="urporxy")
+            r = self.session.get("https://api.gx.me/profile/token", headers=headers)
             self.auth = r.json()['data']
         except:
             i = OperaGX()
@@ -60,7 +69,7 @@ class OperaGX:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0"
         }
         try:
-            nitro = self.session.post("https://discord.opr.gg/v2/direct-fulfillment", headers=headers, )
+            nitro = self.session.post("https://discord.opr.gg/v2/direct-fulfillment", headers=headers)
             nitroGift = nitro.json()['token']
             nitro = f"https://discord.com/billing/partner-promotions/1180231712274387115/{nitroGift}"
 
@@ -77,12 +86,6 @@ class OperaGX:
                 sleep(1)
 
 
-
-def get():
-    i = OperaGX()
-    i.getData("YTY1YjFmMzUtZGJlZC00Y2Y0LWI2MDAtZGFkMWRlYzVjMDMy")
-    i.getNitro()
-
 icon = ("""
      ▒█████   ██▓███  ▓█████  ██▀███   ▄▄▄           ▄████ ▒██   ██▒
     ▒██▒  ██▒▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒▒████▄        ██▒ ▀█▒▒▒ █ █ ▒░
@@ -95,6 +98,23 @@ icon = ("""
         ░ ░              ░  ░   ░           ░  ░         ░  ░    ░  
                                                                 """)
 Write.Print(f"{icon}" + "\n", Colors.red_to_white, interval=0.000)
+
+try:
+    with open("config.json",'r') as fart:
+        data = json.load(fart)
+        num_threads = data['numThreads']
+        operaSession = data['sessionID']
+        
+except Exception as e:
+    print(f"{Fore.MAGENTA}[{Fore.RESET}{time_rn()}{Fore.MAGENTA}] {Fore.RED}ERR{Fore.RESET} Please setup ur config.json! ", end="")
+    Write.Print(f"[{e}]" + "\n", Colors.red_to_white, interval=0.000)
+    sleep(5)
+    sys.exit()
+
+def get():
+    i = OperaGX()
+    i.getData(operaSession)
+    i.getNitro()
 
 threads = []
 
