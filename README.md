@@ -7,7 +7,7 @@ This tool is strictly used to generate Discord Nitro's using OperaGX API!
 - Free & Easy To Use
 
 ## ✍️ Usage
-1. Enter your session ID in `session.txt`
+1. Enter your session ID in `config.json`
 2. Open `main.py` (u need a lot of braincells for this)
 
 ## ⚠️ DISCLAIMER
