@@ -3,16 +3,20 @@ import threading
 from time import sleep
 import json
 import os
+
 try:
     import tls_client
-    from colorama import Fore, init, Back
-    from pystyle import Write, Colors
+    import colorama
+    import pystyle
     import sys
 except:
     os.system("pip install tls_client")
     os.system("pip install colorama")
     os.system("pip install pystyle")
     os.system("pip install sys")
+
+from colorama import Fore, init, Back
+from pystyle import Write, Colors
 
 print_lock = threading.Lock()
 
